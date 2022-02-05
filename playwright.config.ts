@@ -2,15 +2,34 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  projects: [
-    {
-      name: 'chromium',
-      use: {browserName: 'chromium' },
+    testDir: 'tests',
+    testIgnore: '*wip/*',
+    timeout: 30000,
+    retries: 1,
+    workers: 2,
+    use: {
+        baseURL: 'https://playwright.dev',
+        screenshot: 'only-on-failure',
+        video: 'off',
+        trace: 'retain-on-failure',
     },
-    {
-      name: 'iphone',
-      use: {...devices['iPhone 12 Pro'],},
-    }
-  ],
+    projects: [
+        {
+            name: 'chromium',
+            use: {browserName: 'chromium' },
+        },
+        {
+            name: 'firefox',
+            use: { ...devices['Desktop Firefox'] },
+        },
+        {
+            name: 'webkit',
+            use: { ...devices['Desktop Safari'] },
+        },
+        {
+            name: 'iphone',
+            use: {...devices['iPhone 12 Pro'],},
+        }
+    ],
 };
 export default config;

@@ -17,3 +17,5 @@ drivers/
 nohup.out
 .trace
 .tmp
+notes.md
+/tests-wip/

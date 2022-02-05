@@ -1,7 +1,7 @@
 {
   "name": "playwright-basics-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Playwright Basic Demo Project in TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
